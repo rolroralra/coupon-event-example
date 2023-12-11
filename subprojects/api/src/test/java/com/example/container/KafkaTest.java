@@ -13,7 +13,8 @@ import org.testcontainers.utility.DockerImageName;
 public abstract class KafkaTest {
     private final static String TEST_CONTAINER_IMAGE_TAG = "confluentinc/cp-kafka:6.2.1";
 
-    static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse(TEST_CONTAINER_IMAGE_TAG));
+    static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse(TEST_CONTAINER_IMAGE_TAG))
+        .withExposedPorts(9092);
 
     @BeforeAll
     static void beforeAll() {

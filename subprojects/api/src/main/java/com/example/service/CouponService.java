@@ -1,7 +1,6 @@
 package com.example.service;
 
 import com.example.domain.Coupon;
-import com.example.repository.CouponCountRepository;
 import com.example.repository.CouponRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +9,10 @@ public class CouponService implements CouponCommand {
 
     private final CouponRepository couponRepository;
 
-    private final CouponCountRepository couponCountRepository;
-
     public CouponService(
-        CouponRepository couponRepository,
-        CouponCountRepository couponCountRepository
+        CouponRepository couponRepository
     ) {
         this.couponRepository = couponRepository;
-        this.couponCountRepository = couponCountRepository;
     }
 
     @Override

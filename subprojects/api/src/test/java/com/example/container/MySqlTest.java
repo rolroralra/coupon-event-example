@@ -5,10 +5,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.MySQLContainer;
+import org.testcontainers.junit.jupiter.Container;
 
 public abstract class MySqlTest {
     private final static String TEST_CONTAINER_IMAGE_TAG = "mysql:8.0.26";
 
+    @Container
     static MySQLContainer<?> mysql = new MySQLContainer<>(TEST_CONTAINER_IMAGE_TAG);
 
     @BeforeAll
